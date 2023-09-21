@@ -6,3 +6,20 @@
 
 @author: Savant
 """
+numbers = int(input("Введите число: "))
+
+
+def sum_numbers(numbers: int):
+    s = 0
+    len_numbers = len(str(numbers))
+    assert len_numbers == 4, "Число не четырехзначное"
+
+    while len_numbers > 0:
+        s += numbers % 10
+        numbers = numbers // 10
+        len_numbers -= 1
+
+    return s
+
+
+print(sum_numbers(numbers))
